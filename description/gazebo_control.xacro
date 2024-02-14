@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <gazebo reference="body_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+    </gazebo>
+    <gazebo reference="wheel1_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+    </gazebo>
+    <gazebo reference="wheel2_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+    </gazebo>
+
+    <gazebo reference="wheel3_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+    </gazebo>
+
+    <gazebo reference="wheel4_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+    </gazebo>
+
+
+    <gazebo>
+        <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
+            <robotNamespace></robotNamespace>
+            <!-- Number of wheel pairs -->
+            <num_wheel_pairs>2</num_wheel_pairs>
+            <!-- Wheel Information -->
+
+            <!-- wheels0 -->
+            <left_joint>wheel4_joint</left_joint>
+            <right_joint>wheel3_joint</right_joint>
+
+            <!-- wheels1 -->
+            <left_joint>wheel2_joint</left_joint>
+            <right_joint>wheel1_joint</right_joint>
+
+            <!-- kinematics --> 
+            <wheel_separation>${body_link_y_dim+wheel_link_length}</wheel_separation>
+            <wheel_separation>${body_link_y_dim+wheel_link_length}</wheel_separation>
+
+            <wheel_diameter>${2*wheel_link_radius}</wheel_diameter>
+            <wheel_diameter>${2*wheel_link_radius}</wheel_diameter>
+
+            <!-- limits -->
+            <max_wheel_torque>200</max_wheel_torque>
+            <max_wheel_acceleration>10.0</max_wheel_acceleration>
+
+            <odometry_frame>odom</odometry_frame>
+            <robot_base_frame>dummy</robot_base_frame>
+
+            <publish_odom>true</publish_odom>
+            <publish_odom_tf>true</publish_odom_tf>
+            <publish_wheel_tf>true</publish_wheel_tf>
+            
+            <covariance_x>0.0001</covariance_x>
+            <covariance_y>0.0001</covariance_y>
+            <covariance_yaw>0.0001</covariance_yaw>
+
+        </plugin>
+    </gazebo>
+
+
+</robot>
