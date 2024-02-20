@@ -102,7 +102,7 @@
             <geometry>
                 <cylinder length="${wheel_link_length}" radius="${wheel_link_radius}"/>
             </geometry>
-            <material name="black" />
+            <material name="blue" />
         </visual>
         <collision>
             <origin rpy="1.570795 0 0" xyz="0 0 0" />
