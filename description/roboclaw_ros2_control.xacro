@@ -9,14 +9,14 @@
     <command_interface name="velocity"/>
     <state_interface name="position"/>
     <param name="address">128</param>
-    <param name="qppr">500</param>
+    <param name="qppr">35</param>
     <param name="motor_type">M2</param>
   </joint>
   <joint name="wheel2_joint">
     <command_interface name="velocity"/>
     <state_interface name="position"/>
     <param name="address">128</param>
-    <param name="qppr">500</param>
+    <param name="qppr">35</param>
     <param name="motor_type">M1</param>
     <!-- Add other configurations as necessary -->
   </joint>
