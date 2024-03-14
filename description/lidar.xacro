@@ -13,7 +13,7 @@
     </xacro:macro>
 
     <joint name="laser_joint" type="fixed">
-        <parent link="chassis"/>
+        <parent link="body_link"/>
         <child link="laser_frame"/>
         <origin xyz="0.122 0 0.212" rpy="0 0 0"/>
     </joint>
@@ -48,7 +48,7 @@
 
         <sensor name="laser" type="ray">
             <pose> 0 0 0 0 0 0 </pose>
-            <visualize>false</visualize>
+            <visualize>true</visualize>
             <update_rate>10</update_rate>
             <ray>
                 <scan>
